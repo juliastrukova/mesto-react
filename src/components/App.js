@@ -46,11 +46,11 @@ function App() {
             isOpen={isEditProfilePopupOpen}
             onClose={closeAllPopups}>
             <label className="popup__field">
-                <input id="name" type="text" name="name" minlength="2" maxlength="40" value required placeholder="Ваше имя" className="popup__edit-info" />
+                <input id="name" type="text" name="name" minLength="2" maxLength="40" defaultValue required placeholder="Ваше имя" className="popup__edit-info" />
                 <span id="nameError" className="popup__error popup__error_visible"></span>
             </label>
             <label className="popup__field">
-                <input id="about" type="text" name="about" minlength="2" maxlength="200" value required  placeholder="Ваш род деятельности" className="popup__edit-info" />
+                <input id="about" type="text" name="about" minLength="2" maxLength="200" defaultValue required  placeholder="Ваш род деятельности" className="popup__edit-info" />
                 <span id="aboutError" className="popup__error popup__error_visible"></span>
             </label>
         </PopupWithForm>
@@ -61,7 +61,7 @@ function App() {
             isOpen={isEditAvatarPopupOpen}
             onClose={closeAllPopups}>
             <label className="popup__field">
-                <input name="avatarUrl" type="url" id="avatarUrl" value required placeholder="Ссылка на картинку" className="popup__edit-info" />
+                <input name="avatarUrl" type="url" id="avatarUrl" defaultValue required placeholder="Ссылка на картинку" className="popup__edit-info" />
                 <span id="avatarUrlError" className="popup__error popup__error_visible"></span>
             </label>
         </PopupWithForm>
@@ -72,11 +72,11 @@ function App() {
             isOpen={isAddPlacePopupOpen}
             onClose={closeAllPopups}>
             <label className="popup__field">
-                <input id="cardName" name="cardName" type="text" minlength="2" maxlength="30" value required placeholder="Название" className="popup__edit-info" />
+                <input id="cardName" name="cardName" type="text" minLength="2" maxLength="30" defaultValue required placeholder="Название" className="popup__edit-info" />
                 <span id="cardNameError" className="popup__error popup__error_visible"></span>
             </label>
             <label className="popup__field">
-                <input id="cardUrl" name="cardUrl" type="url" value required  placeholder="Ссылка на картинку" className="popup__edit-info" />
+                <input id="cardUrl" name="cardUrl" type="url" defaultValue required  placeholder="Ссылка на картинку" className="popup__edit-info" />
                 <span id="cardUrlError" className="popup__error popup__error_visible"></span>
             </label>
         </PopupWithForm>

@@ -6,7 +6,7 @@ function PopupWithForm ({title, name, buttonText, isOpen, onClose, children }) {
       <section  className={`popup popup_${name} ${isOpen ? 'popup_opened' : ''}`}>
         <div className="popup__container">
           <button className="button popup__button-close" type="button" onClick={onClose}></button>
-          <form className="popup__form" name={name} novalidate>          
+          <form className="popup__form" name={name} noValidate>          
             <h2 className="popup__edit-profile">{title}</h2>
             <fieldset className="popup__form-set">
             {children}
