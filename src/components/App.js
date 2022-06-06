@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <div  className="page">
+    <div className="page">
       <Header/>
       <Main
        onEditProfile={handleEditProfileClick}
@@ -42,7 +42,6 @@ function App() {
         <PopupWithForm
             title="Редактировать профиль"
             name="user"
-            buttonText="Сохранить"
             isOpen={isEditProfilePopupOpen}
             onClose={closeAllPopups}>
             <label className="popup__field">
@@ -57,7 +56,6 @@ function App() {
         <PopupWithForm
             title="Обновить аватар"
             name="avatar"
-            buttonText="Сохранить"
             isOpen={isEditAvatarPopupOpen}
             onClose={closeAllPopups}>
             <label className="popup__field">
@@ -68,7 +66,6 @@ function App() {
         <PopupWithForm
             title="Новое место"
             name="card"
-            buttonText="Сохранить"
             isOpen={isAddPlacePopupOpen}
             onClose={closeAllPopups}>
             <label className="popup__field">
