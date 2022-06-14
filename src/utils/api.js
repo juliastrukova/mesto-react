@@ -26,6 +26,10 @@ class Api {
     .then(this._checkResponse);
   }
 
+  getAllData() {
+    return Promise.all([this.getInitialCards(), this.getInitialUser()])
+  }
+
   // PATCH
   setUser(name, about) {
     return fetch(`${this._baseUrl}/users/me`, {
@@ -50,13 +54,13 @@ class Api {
     .then(this._checkResponse);
   }
   // POST (добавление карточки)
-  addCard(data) {
+  addCard(name, link) {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
-        name: data.cardName,
-        link: data.cardUrl
+        name: name,
+        link: link
       })
     })
     .then(this._checkResponse);
@@ -65,19 +69,27 @@ class Api {
   // DELETE
   deleteCard(id) {
     return fetch(`${this._baseUrl}/cards/${id}`, {
-      method : 'DELETE',
-      headers: this._headers
-    })
+        method: 'DELETE',
+        headers: this._headers
+      })
     .then(this._checkResponse);
   }
   
-  toggleLike(id, methodApi) {
-    return fetch(`${this._baseUrl}/cards/${id}/likes`, {
-      method : methodApi,
-      headers: this._headers
-    })
+  toggleLike(id, isLiked) {
+    if(isLiked) {
+      return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+        method: 'PUT',
+        headers: this._headers
+      })
+      .then(this._checkResponse);
+    } else {
+      return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+        method: 'DELETE',
+        headers: this._headers
+      })
     .then(this._checkResponse);
   }
+}
 }
 
 export const api = new Api({
