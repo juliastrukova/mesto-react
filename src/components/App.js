@@ -119,7 +119,6 @@ function App() {
         onAddPlace={handleAddPlaceSubmit}
         />
       <PopupWithForm
-          onClose={closeAllPopups}
           name="delete"
           title="Вы уверены?"
           buttonText="Да">
