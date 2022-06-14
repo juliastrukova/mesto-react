@@ -39,7 +39,6 @@ function AddPlacePopup ({ onClose, isOpen, onAddPlace }) {
       </label>
     </PopupWithForm>
   )
-
 }
 
 export default AddPlacePopup;

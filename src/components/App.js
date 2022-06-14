@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
@@ -80,7 +80,6 @@ function App() {
         })
         .catch(err => console.log(err));
   }
-
   const handleAddPlaceSubmit = (card) => {
     api.addCard(card.name, card.link)
         .then((res) => {
@@ -119,12 +118,12 @@ function App() {
         onClose={closeAllPopups}
         onAddPlace={handleAddPlaceSubmit}
         />
-        <PopupWithForm
+      <PopupWithForm
           onClose={closeAllPopups}
           name="delete"
           title="Вы уверены?"
-          buttonText="Да"
-        ></PopupWithForm>
+          buttonText="Да">
+      </PopupWithForm>
       <ImagePopup card={selectedCard} onClose={closeAllPopups} />
   </div>
   </CurrentUserContext.Provider>
