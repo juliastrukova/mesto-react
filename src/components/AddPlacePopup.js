@@ -30,11 +30,11 @@ function AddPlacePopup ({ onClose, isOpen, onAddPlace }) {
       onSubmit={handleSubmit}
       >
       <label className="popup__field">
-        <input id="cardName" name="cardName" type="text" minLength="2" maxLength="30" required placeholder="Название" className="popup__edit-info" onChange={handleNameChange}/>
+        <input id="cardName" name="cardName" type="text" value={name} minLength="2" maxLength="30" required placeholder="Название" className="popup__edit-info" onChange={handleNameChange}/>
         <span id="cardNameError" className="popup__error popup__error_visible"></span>
       </label>
       <label className="popup__field">
-        <input id="cardUrl" name="cardUrl" type="url" required  placeholder="Ссылка на картинку" className="popup__edit-info"  onChange={handleLinkChange}/>
+        <input id="cardUrl" name="cardUrl" type="url" value={link} required placeholder="Ссылка на картинку" className="popup__edit-info"  onChange={handleLinkChange}/>
         <span id="cardUrlError" className="popup__error popup__error_visible"></span>
       </label>
     </PopupWithForm>
